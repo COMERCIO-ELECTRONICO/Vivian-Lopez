@@ -28,13 +28,10 @@ var arregloUnoM = json.arreglos.uno
     var arregloUnoP = json.arreglos.uno
     .filter(
         (item) => {
-            return (item % 2)== 0; //para ver si un numero es par n mod 2 = 0 o n % 2
+            return (item % 2)== 0; 
         }
     )
-    console.log ('Numeros multipicados por 2 ');
-    console.log (arregloUnoM);
-    console.log ('Numeros Pares');
-    console.log (arregloUnoP);
+   
     
     var arregloimpar =json.arreglos.dos
     .filter(
@@ -49,6 +46,10 @@ var arregloUnoM = json.arreglos.uno
             return (item.valor + 2);
         }
     )
+    console.log ('Numeros multipicados por 2 ');
+    console.log (arregloUnoM);
+    console.log ('Numeros Pares');
+    console.log (arregloUnoP);
     console.log ('Numeros impares ');
     console.log (arregloimpar);
     console.log ('Numeros impares + 2');
