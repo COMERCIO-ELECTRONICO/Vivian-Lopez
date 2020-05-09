@@ -46,11 +46,13 @@ var arregloUnoM = json.arreglos.uno
             return (item.valor + 2);
         }
     )
-    console.log ('Numeros multipicados por 2 ');
+    
+
+     console.log ('Numeros multipicados por 2 ');
     console.log (arregloUnoM);
     console.log ('Numeros Pares');
-    console.log (arregloUnoP);
+    console.log (arregloUnoM);
     console.log ('Numeros impares ');
     console.log (arregloimpar);
     console.log ('Numeros impares + 2');
-    console.log (arregloSu);
+    console.log (arregloSu); 
