@@ -39,3 +39,26 @@ sumar();
 console.log(sumar(5,5));
 console.log(sumar(5));
 console.log(sumar(5));
+
+class Persona {
+    constructor(
+        protected nombre?: string,
+        public apellido?: string
+    ) {
+
+    }
+}
+const nnuevaPersona = new Persona()
+
+class hijo extends Persona {
+    constructor(
+        protected nombre: string,
+        public apellido: string,
+    ) {
+        super(nombre, apellido);
+        this.apellido = apellido;
+    }
+}
+
+const hijoPersona = new hijo('vivian', 'lopez');
+console.log(hijoPersona);
