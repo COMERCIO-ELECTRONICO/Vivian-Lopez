@@ -1,0 +1,26 @@
+<h1> Titulo</h1>
+<img 
+src ="https://www.eltiempo.com/files/image_640_428/uploads/2020/02/20/5e4e8a874e630.jpeg"
+width ="400px"
+height ="400px"
+alt="">
+<p>Listas no ordenadas etiqueta ul</p>
+<ul>
+  <li>opcion</li>
+  <li>opcion</li>
+</ul>
+<p>Listas no ordenadas etiqueta ol</p>
+<ul>
+  <li>opcion</li>
+  <li>opcion</li>
+</ul>
+<app-mi-primer-componente
+[titulo]="tituloPadre"
+[nombreBoton]="nombreBotonPadre"
+[imagenPath]="imagenPadre"
+(saludoHijo)="obtenerRespuestaHijo($event)"
+>
+ 
+</app-mi-primer-componente>
+
+<router-outlet></router-outlet>
