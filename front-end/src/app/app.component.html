@@ -14,13 +14,15 @@ alt="">
   <li>opcion</li>
   <li>opcion</li>
 </ul>
-<app-mi-primer-componente
-[titulo]="tituloPadre"
-[nombreBoton]="nombreBotonPadre"
-[imagenPath]="imagenPadre"
-(saludoHijo)="obtenerRespuestaHijo($event)"
->
- 
-</app-mi-primer-componente>
+<p>Listas ordenadas etiqueta ol</p>
+<ol>
+  <li>opcion</li>
+  <li>opcion</li>
+</ol>
 
-<router-outlet></router-outlet>
+<app-padre>
+</app-padre>
+
+<app-mi-primer-componente [titulo]="tituloPadre" [nombreBoton]="nombreBotonPadre" [imagenPath]="imagenPadre"
+  [datos]="datosHijo" (saludoHijo)="obtenerRespuestaHjo($event)">
+</app-mi-primer-componente>

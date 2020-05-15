@@ -1,9 +1,26 @@
 <p>mi-primer-componente works!</p>
 <h1>
    vivian XD
-   {{titulo}}
+   {{datos.tituloPadre}}
 </h1>
+<h1>
+  PIES
+</h1>
+<p>
+   objeto (JSON)
+</p>
+{{datos | json}}
+<p>
+   fecha
+</p>
+{{fecha | date: 'yy MM dd'}}
+
+<p>
+   currency
+</p>
+{{sueldo | currency}}
+{{nombre | uppercase}}
 <button (click)="SALUDAR()">
-   {{nombreBoton}}
+   {{datos.nombreBotonPadre}}
 </button>
-<img [src]="imagenPath" alt="">
+<img [src]="" alt="">
