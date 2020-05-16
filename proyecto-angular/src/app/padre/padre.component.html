@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Componente padre</h1>
+    <label for="vanio">Ingrese año</label>
+    <input type="text" [(ngModel)]="vanio"><br>
+    <!-- ngModel: sirve como sintaxis para usar los input dentro de un formulario -->
+    {{vanio}}
+    <h2>Edad</h2>
+    <p>{{edad}}</p>
+    <app-hijo
+        [anio]="vanio"    >
+        <!-- llamamos a la variable padre-->
+    </app-hijo>
+</div>
+
