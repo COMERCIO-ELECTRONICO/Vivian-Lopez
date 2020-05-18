@@ -1,0 +1,78 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<div class="container">
+    <h1>Adaptación página responsive</h1>
+
+    <!-- Sección para el menú -->    
+    <div class="header">
+        <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-4">
+                <div class="login">
+                    <div class="row">
+                        <div class="col-sm-5">Usuario</div>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" name="user">
+                        </div>
+                        <div class="col-sm-5">Contraseña</div>
+                        <div class="col-sm-7">
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu">
+        <div class="menu-text">
+            BIENVENIDOS A LA PLATAFORMA VIRTUAL
+        </div>
+    </div>
+    <div class="contenido">
+        <div class="row">
+            <div class="col-sm-4">
+                <!-- Aca van las materias -->
+                <div class="periodo">Abril-Agosto</div>
+                <div class="row" *ngFor="let numero of arregloMaterias">
+                    <div class="col-sm-6">{{numero.nombre}}</div>
+                    <div class="col-sm-6">{{'Abril 2020'}}</div>
+                </div>
+                <div class="titulo">Enviar mensajes</div>
+                <div class="row">
+                    <div class="col-2"><i class="fa fa-envelope"></i></div>
+                    <div class="col-10">Profesor - Estudiante</div>
+                </div>
+                <div class="titulo">Revisar mensajes</div>
+                <div class="row">
+                    <div class="col-2"><i class="far fa-envelope"></i></div>
+                    <div class="col-10">Profesor - Estudiante</div>
+                </div>
+                <div class="titulo">Servicios</div>
+                <div class="row">
+                    <div class="col-2"><i class="fa fa-file"></i></div>
+                    <div class="col-10">Manual de usuario</div>
+                </div>
+                <div class="titulo">Cartelera</div>
+                <div class="row" *ngFor="let numero of arregloCartelera">
+                    <div class="col-2"><i class="fa fa-file"></i></div>
+                    <div class="col-10">{{numero.nombre}}</div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="contenedorR">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="http://academico.itq.edu.ec:1985/aulavirtual/images/bienvenida.gif" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <span>Es una herramienta de apoyo académica para la  formación de los estudiantes de ITQ</span>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+</div>

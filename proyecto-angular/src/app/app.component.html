@@ -1,20 +1,116 @@
 <div class="container">
-  <h1>
-    hola 
+  <h1 class="titulo">
+    TITULO
   </h1>
-  <div class="row" style="background-color:chartreuse;">
-    hola vivi 
-    <div class="col-sm-12" style="background-color:darkgoldenrod;">
+
+  <div class="row" style="background-color: yellow;">
+    FILA
+    <div class="col-sm-12" style="background-color: chocolate;">
       columna 12
     </div>
-    
-    <div class="col-sm-6" style="background-color:darkorange;">
-      columna 12
-    </div>
-    <div class="col-sm-6" style="background-color:rgb(86, 11, 184);">
+    <div class="col-sm-6" style="background-color: green;">
       columna 6
     </div>
+    <div class="col-sm-6" style="background-color: goldenrod;">
+      columna 6
+    </div>
+    <div class="col-sm-4" style="background-color: rebeccapurple;">
+      columna 4
+    </div>
+    <div class="col-sm-4" style="background-color: red;">
+      columna 4
+    </div>
+    <div class="col-sm-4" style="background-color: gray;">
+      columna 4
+    </div>
   </div>
+
 </div>
-<app-padre>
-</app-padre>
+<div>
+</div>
+
+<h1>
+  DIRECTIVAS
+</h1>
+<h2>angular => ngIf</h2>
+
+<button type="button" class="btn btn-outline-success" (click)="eventoClick()">
+  Success</button>
+<p *ngIf="esconderHola">
+  hola
+</p>
+
+<h2>angular => ngfor</h2>
+{{arregloNuemros}}
+<li *ngFor="let numero of arregloNuemros">
+  <ul> {{numero.nombre}} </ul>
+</li>
+
+<h1>
+  emmet
+</h1>
+*3
++
+>
+.clase
+<div class="titulo"></div>
+
+<div class="row titulo"></div>
+
+<div class="nombreClase">
+</div>
+
+<div class="row">
+  <div class="col-sm-12"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3"></div>
+</div>
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+<div class="row" style="background-color: #00aca2;">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1">
+    ANT
+  </div>
+  <div class="col-sm-1">Servicios</div>
+  <div class="col-sm-1">Programas</div>
+  <div class="col-sm-1">Regulacion</div>
+  <div class="col-sm-1">No</div>
+  <div class="col-sm-1">Trans</div>
+  <div class="col-sm-1">Res</div>
+  <div class="col-sm-1">Trasn</div>
+  <div class="col-sm-1">Const</div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1"></div>
+</div>
+<div>
+  estoy es codigo
+</div>
+
+<div>
+  estoy es otro codigo
+</div>
+
+<app-responsive></app-responsive>

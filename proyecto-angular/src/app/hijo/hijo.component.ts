@@ -14,8 +14,6 @@ export class HijoComponent implements OnInit {
   @Input() anio: number;
   edad: number;
 
-  
-
   ngOnInit(): void {
   }
 
