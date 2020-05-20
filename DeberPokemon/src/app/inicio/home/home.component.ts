@@ -17,4 +17,10 @@ export class HomeComponent implements OnInit {
   irAListar() {
     this._router.navigate(['/usuario', 'listar']);
   }
+  irACrear() {
+    this._router.navigate(['/usuario', 'crear']);
+  }
+  irAEditar() {
+    this._router.navigate(['/usuario', 'editar']);
+  }
 }
