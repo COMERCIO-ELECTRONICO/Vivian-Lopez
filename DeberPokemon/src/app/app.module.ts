@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './inicio/home/home.component';
 import { NoEncontradoComponent } from './inicio/no-encontrado/no-encontrado.component';
 import { AppRoutesComponent } from './app.routes';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { AppRoutesComponent } from './app.routes';
   imports: [
     BrowserModule,
     AppRoutesComponent,
-    UsuarioModule
+    UsuarioModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

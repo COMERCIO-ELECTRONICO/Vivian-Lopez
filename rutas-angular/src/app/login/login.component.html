@@ -1,1 +1,86 @@
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <p>login works!</p>
+<div class="container">
+    <h1>
+        variables html #
+    </h1>
+   
+         
+    <form (ngSubmit)="obtenerFormulario(formularioUsuario)" #formularioUsuario="ngForm">
+    <h4>Estado Formulario</h4>
+    <h5>
+        <pre>
+            valid:{{formularioUsuario.valid}}
+            invalid:{{formularioUsuario.invalid}}
+            dirty: {{formularioUsuario.dirty}}
+            touch:{{formularioUsuario.touched}}
+            untouched:{{formularioUsuario.untouched}}
+        </pre>
+    </h5>
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" 
+          class="form-control" 
+          id="exampleInputEmail1" 
+          aria-describedby="emailHelp"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="ejemplo"
+          minlength="3"
+          required
+          pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+          #campoEmail="ngModel">
+          <h4>
+              Estados del email
+          </h4>
+          <h5>
+            <pre>
+                valid:{{campoEmail.valid}}
+                invalid:{{campoEmail.invalid}}
+                dirty: {{campoEmail.dirty}}
+                touch:{{campoEmail.touched}}
+                untouched:{{campoEmail.untouched}}
+            </pre>
+
+            {{campoEmail.errors | json}}
+
+        </h5>
+          {{campoEmail.dirty}}
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        {{campoEmail.errors | json}}
+        <div class="alert alert-danger"
+        role="alert"
+        *ngIf="(campoEmail.errors)
+        && campoEmail.dirty === true">
+        <p *ngIf = "campoEmail.errors.required">
+            Campo email requerido
+        </p>
+        <p *ngIf = "campoEmail.errors.minlength">
+        minimo 3
+        </p>
+        <p *ngIf = "campoEmail.errors.pattern">
+            No es email
+        </p>
+            
+          </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+          >
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+</div>
