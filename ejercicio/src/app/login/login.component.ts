@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
- 
-  correo = '';
+  // credenciales
+  email = '';
   pass = '';
+  correo = '';
+  
   seleccionadoValor;
   
   valorAutocomplete = '';
   arregloResultado = [];
   sugerencias = ['Vivian', 'Kevin', 'orlando'];
-  constructor(
+  ValorSeleccionado;
+  constructor( 
     private readonly _router: Router ,
+    private readonly _loginService: LoginService 
+
   ) { }
   
   ngOnInit(): void {
+  
+
+    this._loginService.metodoGet('http://localhost:1337/usuario')
+    
+      .subscribe((resultadoMetodoGet)=>{
+        console.log('Respuest de Get');
+        console.log(resultadoMetodoGet);
+      });
+    
+  }
+  seteoValorSeleccionado(eventoSeleecionado) {
+    console.log(eventoSeleecionado);
+    this.ValorSeleccionado = eventoSeleecionado;
   }
   buscarSugerencia(evento) {
      console.log(evento.query);
@@ -37,12 +56,22 @@ export class LoginComponent implements OnInit {
     this.sugerencias = ['vivian','Kevin','orlando'];
     /*this.sugerencias =['hola']; */
   }
-  valorSeleccionado(evento) {
-    console.log(evento);
-    this.seleccionadoValor = evento;
-  }
+  
   ingresar() {
-    console.log(this.valorAutocomplete);
+    this._loginService.metodoPost('http://localhost:1337/usuario',
+    {
+      nombre: "vivian",
+      edad: this.pass,
+      correo: this.email,
+      esCasado: false
+    })
+    
+      .subscribe(
+        (resultadoPost)=>{
+        console.log('Respuest de Post');
+        console.log(resultadoPost);
+      })
+    
 
     if (this.pass === '1234') {
       alert(this.correo);
@@ -60,5 +89,15 @@ export class LoginComponent implements OnInit {
     } else {
       alert('no ingreso');
     }
+  } 
+  eliminarRegistroPorId(){
+    this._loginService
+    .metodoDelete('http://localhost:1337/usuario/2')
+    .subscribe(
+      (respuestDelete)=>{
+        console.log(' repuesta de delete');
+        console.log(respuestDelete);
+      }
+    )
   }
 }

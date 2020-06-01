@@ -7,7 +7,7 @@
                   [suggestions]="sugerencias"
                 (completeMethod)="buscarSugerencia($event)"
                   [dropdown]="true"
-                  (onSelect)="valorSeleccionado($event)">
+                  (onSelect)="seteoValorSeleccionado($event)">
                 </p-autoComplete>
                 <form class="example-form">
                     <mat-form-field class="example-full-width">
@@ -15,7 +15,7 @@
                       <input matInput 
                       placeholder="xxxx@xxxx.com"
                       required
-                      [(ngModel)]="correo"
+                      [(ngModel)]="correo" 
 											name="correo"
 											>
                       
@@ -51,9 +51,11 @@
       <button
       class="btn
       btn-outline-success
-      btn-block">
+      btn-block"
+      (click)="eliminarRegistroPorId()">
+
         Crear
-      </button>
+      </button> 
     </div>
   </div>
 </div>
