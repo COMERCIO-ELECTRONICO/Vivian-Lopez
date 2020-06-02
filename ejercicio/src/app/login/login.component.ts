@@ -21,21 +21,22 @@ export class LoginComponent implements OnInit {
   ValorSeleccionado;
   constructor( 
     private readonly _router: Router ,
-    private readonly _loginService: LoginService 
+    private readonly _loginService: LoginService,
+    
 
-  ) { }
+  ) {}
   
   ngOnInit(): void {
   
 
-    this._loginService.metodoGet('http://localhost:1337/usuario')
+   /*  this._loginService.metodoGet('http://localhost:1337/usuario')
     
       .subscribe((resultadoMetodoGet)=>{
         console.log('Respuest de Get');
         console.log(resultadoMetodoGet);
-      });
+      });*/
     
-  }
+  } 
   seteoValorSeleccionado(eventoSeleecionado) {
     console.log(eventoSeleecionado);
     this.ValorSeleccionado = eventoSeleecionado;
@@ -58,7 +59,12 @@ export class LoginComponent implements OnInit {
   }
   
   ingresar() {
-    this._loginService.metodoPost('http://localhost:1337/usuario',
+    localStorage
+    .setItem(
+      'nombre', 
+      JSON.stringify({nombre: 'Keivn'})
+      );
+    /* this._loginService.metodoPost('http://localhost:1337/usuario',
     {
       nombre: "vivian",
       edad: this.pass,
@@ -88,7 +94,7 @@ export class LoginComponent implements OnInit {
       }
     } else {
       alert('no ingreso');
-    }
+    } */
   } 
   eliminarRegistroPorId(){
     this._loginService
